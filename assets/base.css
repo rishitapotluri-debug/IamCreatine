@@ -87,3 +87,28 @@ h3.section-title{margin:8px 0 4px}
 .backbtn{background:#232a36;color:var(--text);border:1px solid rgba(255,255,255,.12)}
 .backbtn:hover{border-color:rgba(255,255,255,.25)}
 ``
+
+/* --- More menu (compact popover) --- */
+.more-wrap { max-width: var(--max); margin: 8px auto 24px; padding: 0 20px; position: relative; }
+.more-btn { position: relative; }
+.more-menu {
+  position: absolute; z-index: 10;
+  top: 44px; left: 20px; /* aligns with padding */
+  background: #0f131a;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  min-width: 220px;
+  padding: 8px;
+  display: none;
+}
+.more-menu a {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.more-menu a:hover { background: #171a21; }
+.more-menu.open { display: block; }
