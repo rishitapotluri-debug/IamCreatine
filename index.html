@@ -3,164 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PeakFuel — Creatine, Pre-Workout & Apparel</title>
-  <meta name="description" content="Premium creatine, pre-workout and gym apparel designed for performance. Free shipping over $50." />
+  <title>PeakFuel — Supplements, Workout & Diet Plans</title>
+  <meta name="description" content="Premium creatine, pre-workout & apparel. Plus free workout programs, diet plans, and calculators." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f1115;
-      --card:#171a21;
-      --muted:#9aa3b2;
-      --text:#e8ecf1;
-      --brand:#5df2a5;
-      --brand-2:#8a7dff;
-      --danger:#ff6b6b;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:14px;
-      --radius-sm:10px;
-      --max:1200px;
-    }
-
-    * { box-sizing: border-box }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-
-    /* Header */
-    header {
-      position: sticky; top:0; z-index:999;
-      backdrop-filter: blur(10px);
-      background: rgba(15,17,21,.6);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .nav {
-      max-width: var(--max); margin:0 auto; padding:14px 20px;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-    }
-    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text) }
-    .logo {
-      width:36px; height:36px; border-radius:10px;
-      background: conic-gradient(from 210deg, var(--brand), var(--brand-2), #2dd4bf);
-      box-shadow: 0 8px 24px rgba(93,242,165,.35);
-    }
-    .brand strong { font-weight:700; letter-spacing:.3px }
-    nav a {
-      color: var(--muted); text-decoration: none; font-weight:600; font-size: 14px; margin: 0 10px;
-    }
-    nav a:hover { color: var(--text) }
-    .cta {
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      color:#0b0e12; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700; box-shadow: var(--shadow);
-    }
-
-    /* Hero */
-    .hero {
-      max-width: var(--max); margin: 32px auto 10px; padding: 28px 20px;
-      display:grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 52px);
-      line-height:1.06; margin: 0 0 12px;
-      letter-spacing: -.5px;
-    }
-    .hero p { color: var(--muted); margin:0 0 18px; font-size: clamp(14px, 2.2vw, 18px) }
-    .hero .actions { display:flex; gap:12px; flex-wrap: wrap }
-    .btn {
-      display:inline-flex; align-items:center; gap:8px; padding:12px 16px;
-      border-radius: 12px; border:1px solid rgba(255,255,255,.12);
-      color: var(--text); text-decoration:none; font-weight:700;
-      background: #141820;
-    }
-    .btn:hover { border-color: rgba(255,255,255,.25) }
-    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #0b0e12; border: none }
-    .hero-media {
-      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); position:relative;
-      border:1px solid rgba(255,255,255,.06);
-    }
-    .hero-media img { width:100%; height:100%; object-fit: cover; display:block }
-    .badge {
-      position:absolute; bottom:12px; left:12px;
-      background: rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.15);
-      color:#d3ffe7; padding:8px 12px; border-radius: 999px; font-size: 12px; font-weight:700;
-      backdrop-filter: blur(6px);
-    }
-
-    /* Section */
-    section { max-width: var(--max); margin: 8px auto; padding: 10px 20px 28px }
-    .section-head { display:flex; align-items: baseline; justify-content: space-between; gap:12px; margin: 14px 0 18px }
-    .section-head h2 { margin:0; font-size: 24px }
-    .section-head p { margin:0; color: var(--muted) }
-
-    /* Grid */
-    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    @media (max-width: 960px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: repeat(2, 1fr) } }
-    @media (max-width: 640px) { .grid { grid-template-columns: 1fr } }
-
-    /* Card */
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      overflow: hidden; box-shadow: var(--shadow);
-      transition: transform .2s ease, border-color .2s ease;
-    }
-    .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.16) }
-    .card-media { position:relative; aspect-ratio: 4 / 3; overflow:hidden; background: #0b0e12 }
-    .card-media img { width:100%; height:100%; object-fit:cover; display:block; transform: scale(1.02) }
-    .flag {
-      position:absolute; top:12px; left:12px; font-size: 12px; font-weight:700;
-      background: rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.15);
-      color:#fff; padding:6px 10px; border-radius:999px; backdrop-filter: blur(6px);
-    }
-    .card-body { padding: 14px }
-    .title { font-weight:700; margin: 0 0 6px; font-size: 18px; letter-spacing: .2px }
-    .desc { margin:0 0 10px; color: var(--muted); font-size: 14px; min-height: 40px }
-    .price { display:flex; align-items:center; gap:10px; margin: 8px 0 12px }
-    .price .now { font-size: 18px; font-weight:700; color: var(--brand) }
-    .price .old { font-size: 14px; color: #8391a8; text-decoration: line-through }
-    .actions-row { display:flex; gap:10px; }
-    .pill { flex: 1; text-align:center; padding:10px 12px; border-radius: 10px; font-weight:700; font-size: 14px; text-decoration: none }
-    .pill.buy { background: var(--brand); color:#0b0e12 }
-    .pill.cart { background: #232a36; color: var(--text); border:1px solid rgba(255,255,255,.1) }
-
-    /* USP bar */
-    .usp {
-      display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin: 18px 0 0;
-    }
-    .usp > div {
-      background: #11151c; border:1px solid rgba(255,255,255,.06); border-radius: var(--radius-sm);
-      padding: 12px; text-align:center; color: var(--muted); font-weight: 600;
-    }
-    @media (max-width: 640px){ .usp { grid-template-columns: 1fr } }
-
-    /* Footer */
-    footer {
-      border-top:1px solid rgba(255,255,255,.06);
-      padding: 28px 20px; margin-top: 12px; color: var(--muted);
-    }
-    .footer-inner {
-      max-width: var(--max); margin:0 auto;
-      display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:18px;
-    }
-    .footer-inner a { color: var(--muted); text-decoration:none; }
-    .footer-inner a:hover { color: var(--text) }
-    @media (max-width: 880px){ .footer-inner{ grid-template-columns: 1fr } }
-  </style>
+  <link rel="stylesheet" href="assets/base.css" />
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <div class="nav">
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <span class="logo" aria-hidden="true"></span>
         <strong>PeakFuel</strong>
       </a>
       <nav>
-        <a href="#creatine">Creatine</a>
-        <a href="#preworkout">Pre‑Workout</a>
-        <a href="#apparel">Apparel</a>
+        <a href="workout.html" target="_blank" rel="noopener">Workout Plans</a>
+        <a href="diet.html" target="_blank" rel="noopener">Diet Plans</a>
+        <a href="tools.html" target="_blank" rel="noopener">Tools</a>
+        <a class="cta" href="#shop">Shop Now</a>
       </nav>
-      <a class="cta" href="#shop">Shop Now</a>
     </div>
   </header>
 
@@ -170,13 +33,13 @@
       <h1>Fuel Your Edge.</h1>
       <p>Clinically-dosed formulas, clean flavors, and performance-ready apparel. Free shipping on orders over $50.</p>
       <div class="actions">
-        <a href="#creatine" class="btn primary">Shop Creatine</a>
-        <a href="#preworkout" class="btn">Explore Pre‑Workout</a>
-        <a href="#apparel" class="btn">New Apparel</a>
+        <a class="btn primary" href="workout.html" target="_blank" rel="noopener">Get a Workout Plan</a>
+        <a class="btn" href="diet.html" target="_blank" rel="noopener">Find a Diet Plan</a>
+        <a class="btn" href="tools.html" target="_blank" rel="noopener">Macro Calculator</a>
       </div>
     </div>
     <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1554344728-77cf90d9ed26?q=80&w=1600&auto=format&fit=crop" alt="Gym setup with supplements and shaker">
+      <img src="https://images.unsplash.com/photo-1554344728-77cf90d9ed26?q=80&w=1600&auto=format&fit=crop" alt="Barbell and weights in a gym" />
       <span class="badge">Trusted by 50,000+ athletes</span>
     </div>
   </section>
@@ -190,195 +53,57 @@
     </div>
   </section>
 
-  <!-- Creatine -->
+  <!-- Sample products (kept from your shop) -->
   <section id="creatine">
     <div class="section-head">
       <h2>Creatine</h2>
       <p>Pure, micronized monohydrate for strength & recovery.</p>
     </div>
-
     <div class="grid">
       <article class="card">
         <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1596568353524-4b1e07b3ebfe?q=80&w=1600&auto=format&fit=crop" alt="Creatine monohydrate tub on dark background">
+          <img src="https://images.unsplash.com/photo-1596568353524-4b1e07b3ebfe?q=80&w=1600&auto=format&fit=crop" alt="Creatine powder jar" />
           <span class="flag">Best Seller</span>
         </div>
         <div class="card-body">
           <h3 class="title">Creatine Monohydrate • 300g</h3>
           <p class="desc">Micronized for rapid mixability. Unflavored — add to anything.</p>
-          <div class="price">
-            <span class="now">$24.99</span>
-            <span class="old">$29.99</span>
-          </div>
+          <div class="price"><span class="now">$24.99</span><span class="old">$29.99</span></div>
           <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
+            <a class="pill buy" href="#" aria-label="Buy Creatine 300g">Buy Now</a>
+            <a class="pill cart" href="#" aria-label="Add Creatine 300g to Cart">Add to Cart</a>
           </div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989a?q=80&w=1600&auto=format&fit=crop" alt="Creatine capsules close-up">
+          <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989a?q=80&w=1600&auto=format&fit=crop" alt="Creatine capsules bottle" />
           <span class="flag">Vegan</span>
         </div>
         <div class="card-body">
           <h3 class="title">Creatine Capsules • 180 caps</h3>
           <p class="desc">Convenient 3g per serving. Zero flavor, zero fuss.</p>
-          <div class="price">
-            <span class="now">$27.99</span>
-          </div>
+          <div class="price"><span class="now">$27.99</span></div>
           <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
+            <a class="pill buy" href="#">Buy Now</a>
+            <a class="pill cart" href="#">Add to Cart</a>
           </div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1579722825300-c7c2f9a8fc52?q=80&w=1600&auto=format&fit=crop" alt="Scoop of creatine powder">
+          <img src="https://images.unsplash.com/photo-1579722825300-c7c2f9a8fc52?q=80&w=1600&auto=format&fit=crop" alt="Bulk creatine pouch" />
           <span class="flag">Micronized</span>
         </div>
         <div class="card-body">
           <h3 class="title">Creatine Monohydrate • 1kg</h3>
           <p class="desc">Bulk value bag for dedicated lifters. ~200 servings.</p>
-          <div class="price">
-            <span class="now">$59.99</span>
-            <span class="old">$69.99</span>
-          </div>
+          <div class="price"><span class="now">$59.99</span><span class="old">$69.99</span></div>
           <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Pre-Workout -->
-  <section id="preworkout">
-    <div class="section-head">
-      <h2>Pre‑Workout</h2>
-      <p>Energy, focus, and pump — without the crash.</p>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1579126038374-6064e9370fbe?q=80&w=1600&auto=format&fit=crop" alt="Pre-workout tub with neon lighting">
-          <span class="flag">200mg Caffeine</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Ignite • Tropical Surge (30 servings)</h3>
-          <p class="desc">Clinically‑dosed beta‑alanine, citrulline, and L‑tyrosine.</p>
-          <div class="price">
-            <span class="now">$34.99</span>
-            <span class="old">$39.99</span>
-          </div>
-          <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1600&auto=format&fit=crop" alt="Shaker with pre-workout drink">
-          <span class="flag">Stim‑Free</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Pump+ • Blue Razz (30 servings)</h3>
-          <p class="desc">Caffeine‑free pump & focus stack for late sessions.</p>
-          <div class="price">
-            <span class="now">$32.99</span>
-          </div>
-          <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Energy lightning effect">
-          <span class="flag">Sugar‑Free</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">FocusX • Citrus Burst (30 servings)</h3>
-          <p class="desc">Clean energy + nootropics for locked‑in training.</p>
-          <div class="price">
-            <span class="now">$36.99</span>
-          </div>
-          <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Apparel -->
-  <section id="apparel">
-    <div class="section-head">
-      <h2>Apparel</h2>
-      <p>Performance fits designed for the grind.</p>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1520975922284-5f61f1b6f82e?q=80&w=1600&auto=format&fit=crop" alt="Athlete wearing black performance tee">
-          <span class="flag">New</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Performance Tee • Black</h3>
-          <p class="desc">Moisture‑wicking, 4‑way stretch. S–XXL.</p>
-          <div class="price">
-            <span class="now">$24.00</span>
-          </div>
-          <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1549570652-97324981a6fd?q=80&w=1600&auto=format&fit=crop" alt="Gym hoodie on rack">
-          <span class="flag">Limited</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Heavyweight Hoodie • Charcoal</h3>
-          <p class="desc">Soft fleece interior, drop‑shoulder fit.</p>
-          <div class="price">
-            <span class="now">$49.00</span>
-          </div>
-          <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1520975960059-4f0c88f954a7?q=80&w=1600&auto=format&fit=crop" alt="Athletic shorts">
-          <span class="flag">Bestseller</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Train Shorts • Graphite</h3>
-          <p class="desc">Breathable mesh with zip pockets. 5&quot; inseam.</p>
-          <div class="price">
-            <span class="now">$32.00</span>
-          </div>
-          <div class="actions-row">
-            <a href="#" class="pill buy">Buy Now</a>
-            <a href="#" class="pill cart">Add to Cart</a>
+            <a class="pill buy" href="#">Buy Now</a>
+            <a class="pill cart" href="#">Add to Cart</a>
           </div>
         </div>
       </article>
@@ -389,20 +114,20 @@
   <footer>
     <div class="footer-inner">
       <div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
           <span class="logo" aria-hidden="true"></span>
           <strong style="color:#fff">PeakFuel</strong>
         </div>
-        <p>Premium supplements and apparel to power every rep. © <span id="year"></span> PeakFuel.</p>
+        <p>Premium supplements and training resources. © <span id="year"></span> PeakFuel.</p>
       </div>
       <div>
-        <h4 style="margin:0 0 8px; color:#fff">Support</h4>
-        <a href="#">Shipping & Returns</a><br/>
-        <a href="#">Contact Us</a><br/>
-        <a href="#">FAQs</a>
+        <h4 style="margin:0 0 8px;color:#fff">Resources</h4>
+        <a href="workout.html" target="_blank" rel="noopener">Workout Plans</a><br/>
+        <a href="diet.html" target="_blank" rel="noopener">Diet Plans</a><br/>
+        <a href="tools.html" target="_blank" rel="noopener">Macro Calculator</a>
       </div>
       <div>
-        <h4 style="margin:0 0 8px; color:#fff">Legal</h4>
+        <h4 style="margin:0 0 8px;color:#fff">Legal</h4>
         <a href="#">Terms</a><br/>
         <a href="#">Privacy</a><br/>
         <a href="#">Disclaimer</a>
@@ -410,11 +135,6 @@
     </div>
   </footer>
 
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
-``
