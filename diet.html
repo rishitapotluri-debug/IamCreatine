@@ -5,37 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PeakFuel Diet Plans</title>
   <meta name="description" content="Structured meal plans for fat loss, muscle gain, and a vegetarian Indian option with macros." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/base.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
 </head>
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="index.html"><span class="logo" aria-hidden="true"></span><strong>PeakFuel</strong></a>
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span><strong>PeakFuel</strong>
+      </a>
       <nav>
         <a href="workout.html">Workout Plans</a>
         <a href="diet.html">Diet Plans</a>
-        <a class="cta" href="macro.html">Macro Calculator</a>
-        <a href="index.html#shop">Shop</a>
+        <a href="macro.html">Macro Calculator</a>
+        <a class="cta" href="index.html#shop">Shop</a>
       </nav>
     </div>
   </header>
 
+  <!-- Back Button -->
+  <div class="backwrap">
+    <button class="btn backbtn" type="button" onclick="goBack()">← Back</button>
+  </div>
+
   <section class="hero">
     <div>
-      <p class="small"><a href="index.html">Home</a> ▸ <strong>Diet Plans</strong></p>
+      <p class="small breadcrumb"><a href="index.html">Home</a> ▸ <strong>Diet Plans</strong></p>
       <h1>Diet Plans</h1>
       <p>Balanced, sustainable nutrition. Choose a plan and adjust portions to your calorie target from the Macro Calculator.</p>
       <div class="actions">
-        <a class="btn primary" href="#fatloss">Fat Loss</a>
+        <a class="btn" href="#fatloss">Fat Loss</a>
         <a class="btn" href="#musclegain">Muscle Gain</a>
         <a class="btn" href="#vegetarian">Vegetarian</a>
       </div>
     </div>
     <div class="hero-media">
-      <img alt="Healthy food" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1600&auto=format&fit=crop" />
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1600&auto=format&fit=crop" alt="Healthy food ingredients on a table">
       <span class="badge">Whole foods first</span>
     </div>
   </section>
@@ -49,7 +56,7 @@
     <div class="grid">
       <article class="card">
         <div class="card-media">
-          <img alt="Greek yogurt bowl" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1600&auto=format&fit=crop" alt="Greek yogurt with fruit and oats">
           <span class="flag">Breakfast</span>
         </div>
         <div class="card-body">
@@ -59,7 +66,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Chicken salad" src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1600&auto=format&fit=crop" alt="Chicken salad bowl">
           <span class="flag">Lunch</span>
         </div>
         <div class="card-body">
@@ -69,7 +76,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Salmon and rice" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop" alt="Salmon with rice and veggies">
           <span class="flag">Dinner</span>
         </div>
         <div class="card-body">
@@ -89,7 +96,7 @@
     <div class="grid">
       <article class="card">
         <div class="card-media">
-          <img alt="Oats and eggs" src="https://images.unsplash.com/photo-1559622214-6c76defa9980?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1559622214-6c76defa9980?q=80&w=1600&auto=format&fit=crop" alt="Oatmeal and eggs">
           <span class="flag">Breakfast</span>
         </div>
         <div class="card-body">
@@ -99,7 +106,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Beef bowl" src="https://images.unsplash.com/photo-1543353071-087092ec393e?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1543353071-087092ec393e?q=80&w=1600&auto=format&fit=crop" alt="Beef bowl with rice">
           <span class="flag">Lunch</span>
         </div>
         <div class="card-body">
@@ -109,7 +116,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Chicken pasta" src="https://images.unsplash.com/photo-1447078806655-40579c2520d6?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1447078806655-40579c2520d6?q=80&w=1600&auto=format&fit=crop" alt="Pasta with chicken and salad">
           <span class="flag">Dinner</span>
         </div>
         <div class="card-body">
@@ -129,7 +136,7 @@
     <div class="grid">
       <article class="card">
         <div class="card-media">
-          <img alt="Poha" src="https://images.unsplash.com/photo-1619158401201-cfb6795d3d5d?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1619158401201-cfb6795d3d5d?q=80&w=1600&auto=format&fit=crop" alt="Poha with curd and fruit">
           <span class="flag">Breakfast</span>
         </div>
         <div class="card-body">
@@ -139,7 +146,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Dal rice" src="https://images.unsplash.com/photo-1641566154616-9f1ec3abca21?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1641566154616-9f1ec3abca21?q=80&w=1600&auto=format&fit=crop" alt="Dal rice and sabzi">
           <span class="flag">Lunch</span>
         </div>
         <div class="card-body">
@@ -149,7 +156,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Paneer roti" src="https://images.unsplash.com/photo-1604909052743-89f59786ec3b?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1604909052743-89f59786ec3b?q=80&w=1600&auto=format&fit=crop" alt="Paneer bhurji with roti and raita">
           <span class="flag">Dinner</span>
         </div>
         <div class="card-body">
@@ -158,6 +165,7 @@
         </div>
       </article>
     </div>
+
     <div class="actions" style="padding:0 20px">
       <a class="btn" href="workout.html">Go to Workout Plans</a>
       <a class="btn" href="macro.html">Open Macro Calculator</a>
@@ -167,16 +175,33 @@
 
   <footer>
     <div class="footer-inner">
-      <div><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="logo" aria-hidden="true"></span><strong style="color:#fff">PeakFuel</strong></div>
-        <p>Eat for performance. © <span id="year"></span></p></div>
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <span class="logo" aria-hidden="true"></span><strong style="color:#fff">PeakFuel</strong>
+        </div>
+        <p>Eat for performance. © <span id="year"></span></p>
+      </div>
       <div>
         <h4 style="margin:0 0 8px;color:#fff">Quick Links</h4>
         <a href="macro.html">Macro Calculator</a><br/>
         <a href="workout.html">Workout Plans</a>
       </div>
-      <div><h4 style="margin:0 0 8px;color:#fff">Disclaimer</h4><p class="small">Informational only. Consider allergies & medical conditions.</p></div>
+      <div>
+        <h4 style="margin:0 0 8px;color:#fff">Disclaimer</h4>
+        <p class="small">Informational only. Consider allergies & medical conditions.</p>
+      </div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+  <script>
+    function goBack(){
+      if (window.history && window.history.length > 1 && document.referrer) {
+        history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    }
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
