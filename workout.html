@@ -5,37 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PeakFuel Workout Plans</title>
   <meta name="description" content="Free workout programs: beginner full body, upper/lower split, and advanced push-pull-legs." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/base.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
 </head>
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="index.html"><span class="logo" aria-hidden="true"></span><strong>PeakFuel</strong></a>
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span><strong>PeakFuel</strong>
+      </a>
       <nav>
         <a href="workout.html">Workout Plans</a>
         <a href="diet.html">Diet Plans</a>
-        <a class="cta" href="macro.html">Macro Calculator</a>
-        <a href="index.html#shop">Shop</a>
+        <a href="macro.html">Macro Calculator</a>
+        <a class="cta" href="index.html#shop">Shop</a>
       </nav>
     </div>
   </header>
 
+  <!-- Back Button -->
+  <div class="backwrap">
+    <button class="btn backbtn" type="button" onclick="goBack()">← Back</button>
+  </div>
+
   <section class="hero">
     <div>
-      <p class="small"><a href="index.html">Home</a> ▸ <strong>Workout Plans</strong></p>
+      <p class="small breadcrumb"><a href="index.html">Home</a> ▸ <strong>Workout Plans</strong></p>
       <h1>Workout Plans</h1>
       <p>Structured, progressive programs for every level. Warm up 5–10 min, RPE ~7–9 for working sets, rest 60–120s.</p>
       <div class="actions">
-        <a class="btn primary" href="#beginner">Beginner</a>
+        <a class="btn" href="#beginner">Beginner</a>
         <a class="btn" href="#intermediate">Intermediate</a>
         <a class="btn" href="#advanced">Advanced</a>
       </div>
     </div>
     <div class="hero-media">
-      <img alt="Athlete training" src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=1600&auto=format&fit=crop" />
+      <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=1600&auto=format&fit=crop" alt="Gym with barbell and plates">
       <span class="badge">Progress > Perfection</span>
     </div>
   </section>
@@ -49,7 +56,7 @@
     <div class="grid">
       <article class="card">
         <div class="card-media">
-          <img alt="Full body A" src="https://images.unsplash.com/photo-1594385208975-2e9f4b3f4f9b?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1594385208975-2e9f4b3f4f9b?q=80&w=1600&auto=format&fit=crop" alt="Back squat setup">
           <span class="flag">Day A</span>
         </div>
         <div class="card-body">
@@ -59,7 +66,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Full body B" src="https://images.unsplash.com/photo-1596357395104-5b6b8c6102d5?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1596357395104-5b6b8c6102d5?q=80&w=1600&auto=format&fit=crop" alt="Dumbbells on gym floor">
           <span class="flag">Day B</span>
         </div>
         <div class="card-body">
@@ -69,7 +76,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Progression tips" src="https://images.unsplash.com/photo-1526406915894-6a9f3d6a540d?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1526406915894-6a9f3d6a540d?q=80&w=1600&auto=format&fit=crop" alt="Gym whiteboard with notes">
           <span class="flag">Progression</span>
         </div>
         <div class="card-body">
@@ -89,7 +96,7 @@
     <div class="grid">
       <article class="card">
         <div class="card-media">
-          <img alt="Upper day" src="https://images.unsplash.com/photo-1599058917212-d750089bc04b?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1599058917212-d750089bc04b?q=80&w=1600&auto=format&fit=crop" alt="Bench press setup">
           <span class="flag">Upper 1</span>
         </div>
         <div class="card-body">
@@ -99,7 +106,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Lower day" src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=1600&auto=format&fit=crop" alt="Barbell squat in rack">
           <span class="flag">Lower 1</span>
         </div>
         <div class="card-body">
@@ -109,7 +116,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Upper 2 and Lower 2" src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?q=80&w=1600&auto=format&fit=crop" alt="Dumbbells neatly arranged">
           <span class="flag">Upper 2 & Lower 2</span>
         </div>
         <div class="card-body">
@@ -129,7 +136,7 @@
     <div class="grid">
       <article class="card">
         <div class="card-media">
-          <img alt="Push day" src="https://images.unsplash.com/photo-1566241142559-40e1dab4e989?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1566241142559-40e1dab4e989?q=80&w=1600&auto=format&fit=crop" alt="Dumbbell shoulder press">
           <span class="flag">Push</span>
         </div>
         <div class="card-body">
@@ -139,7 +146,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Pull day" src="https://images.unsplash.com/photo-1594391538730-3b7b7be3c7f3?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1594391538730-3b7b7be3c7f3?q=80&w=1600&auto=format&fit=crop" alt="Pull-up bar">
           <span class="flag">Pull</span>
         </div>
         <div class="card-body">
@@ -149,7 +156,7 @@
       </article>
       <article class="card">
         <div class="card-media">
-          <img alt="Leg day" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop" />
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop" alt="Leg press machine">
           <span class="flag">Legs</span>
         </div>
         <div class="card-body">
@@ -158,9 +165,11 @@
         </div>
       </article>
     </div>
+
     <p class="small" style="max-width:var(--max);margin:8px auto 24px;padding:0 20px">
       Tip: Aim for 10k steps/day, 7–9 hours sleep, and 1.6–2.2 g protein/kg bodyweight.
     </p>
+
     <div class="actions" style="padding:0 20px">
       <a class="btn" href="diet.html">Go to Diet Plans</a>
       <a class="btn" href="macro.html">Open Macro Calculator</a>
@@ -170,16 +179,33 @@
 
   <footer>
     <div class="footer-inner">
-      <div><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="logo" aria-hidden="true"></span><strong style="color:#fff">PeakFuel</strong></div>
-        <p>Train hard, recover harder. © <span id="year"></span></p></div>
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <span class="logo" aria-hidden="true"></span><strong style="color:#fff">PeakFuel</strong>
+        </div>
+        <p>Train hard, recover harder. © <span id="year"></span></p>
+      </div>
       <div>
         <h4 style="margin:0 0 8px;color:#fff">More</h4>
         <a href="diet.html">Diet Plans</a><br/>
         <a href="macro.html">Macro Calculator</a>
       </div>
-      <div><h4 style="margin:0 0 8px;color:#fff">Disclaimer</h4><p class="small">Informational only. Consult a professional if you have medical conditions.</p></div>
+      <div>
+        <h4 style="margin:0 0 8px;color:#fff">Disclaimer</h4>
+        <p class="small">Informational only. Consult a professional if you have medical conditions.</p>
+      </div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+  <script>
+    function goBack(){
+      if (window.history && window.history.length > 1 && document.referrer) {
+        history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    }
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
