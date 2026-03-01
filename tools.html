@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PeakFuel Tools — Macro & Calorie Calculator</title>
+  <meta name="description" content="Calculate calories and macros using Mifflin–St Jeor. Get cutting / maintenance / bulking macros instantly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css" />
+  <style>
+    .tool {background:#11151c;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);max-width:var(--max);margin:0 auto}
+    .row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:800px){.row{grid-template-columns:1fr}}
+    label{display:block;font-weight:600;margin:4px 0 6px}
+    input,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f131a;color:var(--text)}
+    .result{margin-top:14px;padding:12px;border-radius:10px;background:#0f131a;border:1px solid rgba(255,255,255,.08)}
+    .inline{display:flex;gap:10px;flex-wrap:wrap}
+    .inline span{background:#0f131a;border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html" target="_blank" rel="noopener">
+        <span class="logo" aria-hidden="true"></span><strong>PeakFuel</strong>
+      </a>
+      <nav>
+        <a href="workout.html" target="_blank" rel="noopener">Workout Plans</a>
+        <a href="diet.html" target="_blank" rel="noopener">Diet Plans</a>
+        <a class="cta" href="index.html" target="_blank" rel="noopener">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Macro & Calorie Calculator</h1>
+      <p>Uses Mifflin–St Jeor BMR with standard activity factors. Choose a goal to get suggested macros.</p>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop" alt="Healthy food and notepad" />
+      <span class="badge">Estimate, then iterate</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="tool">
+      <div class="row">
+        <div>
+          <label for="sex">Sex</label>
+          <select id="sex"><option value="male">Male</option><option value="female">Female</option></select>
+        </div>
+        <div>
+          <label for="age">Age (years)</label>
+          <input id="age" type="number" min="10" max="100" value="28" />
+        </div>
+        <div>
+          <label for="height">Height (cm)</label>
+          <input id="height" type="number" min="120" max="220" value="170" />
+        </div>
+        <div>
+          <label for="weight">Weight (kg)</label>
+          <input id="weight" type="number" min="30" max="180" value="70" />
+        </div>
+        <div>
+          <label for="activity">Activity</label>
+          <select id="activity">
+            <option value="1.2">Sedentary (1.2)</option>
+            <option value="1.375">Light (1.375)</option>
+            <option value="1.55" selected>Moderate (1.55)</option>
+            <option value="1.725">Very (1.725)</option>
+            <option value="1.9">Extreme (1.9)</option>
+          </select>
+        </div>
+        <div>
+          <label for="goal">Goal</label>
+          <select id="goal">
+            <option value="cut">Cut (‑15%)</option>
+            <option value="maintain" selected>Maintain</option>
+            <option value="bulk">Bulk (+10%)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inline" style="margin-top:12px">
+        <button class="btn primary" id="calcBtn" type="button">Calculate</button>
+        <button class="btn" id="resetBtn" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" style="display:none;margin-top:14px"></div>
+      <p class="note">Protein default: 1.8 g/kg • Fat: 0.8 g/kg • Carbs fill remaining calories. Tweak as needed.</p>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="section-title">Water Intake Guide</h3>
+    <p class="small">Aim for ~30–35 ml/kg/day. Add 300–500 ml per hour of intense training, more in hot climates.</p>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="logo" aria-hidden="true"></span><strong style="color:#fff">PeakFuel</strong></div>
+        <p>Tools to fuel your goals. © <span id="year"></span></p></div>
+      <div>
+        <h4 style="margin:0 0 8px;color:#fff">Quick Links</h4>
+        <a href="diet.html" target="_blank" rel="noopener">Diet Plans</a><br/>
+        <a href="workout.html" target="_blank" rel="noopener">Workout Plans</a>
+      </div>
+      <div><h4 style="margin:0 0 8px;color:#fff">Disclaimer</h4><p class="small">Estimates only. Consult a professional for medical needs.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    function calc(){
+      const sex = document.getElementById('sex').value;
+      const age = +document.getElementById('age').value;
+      const height = +document.getElementById('height').value;
+      const weight = +document.getElementById('weight').value;
+      const activity = +document.getElementById('activity').value;
+      const goal = document.getElementById('goal').value;
+
+      // Mifflin–St Jeor BMR
+      const s = sex === 'male' ? 5 : -161;
+      const bmr = (10*weight) + (6.25*height) - (5*age) + s;
+      let tdee = bmr * activity;
+
+      if (goal === 'cut') tdee *= 0.85;
+      if (goal === 'bulk') tdee *= 1.10;
+
+      // Macros: Protein 1.8 g/kg, Fat 0.8 g/kg, Carbs fill
+      const protein_g = Math.round(1.8 * weight);
+      const fat_g = Math.round(0.8 * weight);
+      const kcal_protein = protein_g * 4;
+      const kcal_fat = fat_g * 9;
+      const kcal_remaining = Math.max(0, Math.round(tdee) - (kcal_protein + kcal_fat));
+      const carbs_g = Math.round(kcal_remaining / 4);
+
+      const res = document.getElementById('result');
+      res.style.display = 'block';
+      res.innerHTML = `
+        <div class="inline" style="margin-bottom:8px">
+          <span><strong>BMR:</strong> ${Math.round(bmr)} kcal</span>
+          <span><strong>TDEE:</strong> ${Math.round(bmr*activity)} kcal</span>
+          <span) => { document.querySelectorAll('input').forEach(i=>i.value=i.defaultValue); document.querySelectorAll('select').forEach(s=>s.value=s.querySelector('option[selected]')?.value || s.options[0].value); document.getElementById('result').style.display='none';});
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
