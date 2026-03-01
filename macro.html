@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PeakFuel Macro & Calorie Calculator</title>
   <meta name="description" content="Calculate calories and macros using Mifflin–St Jeor and standard activity factors. Choose cutting, maintenance, or bulking targets." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/base.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
   <style>
     .tool {background:#11151c;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);max-width:var(--max);margin:0 auto}
     .row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -24,24 +24,31 @@
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="index.html"><span class="logo" aria-hidden="true"></span><strong>PeakFuel</strong></a>
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span><strong>PeakFuel</strong>
+      </a>
       <nav>
         <a href="workout.html">Workout Plans</a>
         <a href="diet.html">Diet Plans</a>
-        <a class="cta" href="macro.html">Macro Calculator</a>
-        <a href="index.html#shop">Shop</a>
+        <a href="macro.html">Macro Calculator</a>
+        <a class="cta" href="index.html#shop">Shop</a>
       </nav>
     </div>
   </header>
 
+  <!-- Back Button -->
+  <div class="backwrap">
+    <button class="btn backbtn" type="button" onclick="goBack()">← Back</button>
+  </div>
+
   <section class="hero">
     <div>
-      <p class="small"><a href="index.html">Home</a> ▸ <strong>Macro Calculator</strong></p>
+      <p class="small breadcrumb"><a href="index.html">Home</a> ▸ <strong>Macro Calculator</strong></p>
       <h1>Macro & Calorie Calculator</h1>
       <p>Uses Mifflin–St Jeor BMR with standard activity factors. Choose a goal to get suggested macros.</p>
     </div>
     <div class="hero-media">
-      <img alt="Food scale and notebook" src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop" />
+      <img src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop" alt="Meal prep containers with food">
       <span class="badge">Estimate, then iterate</span>
     </div>
   </section>
@@ -88,6 +95,7 @@
       <div class="inline" style="margin-top:12px">
         <button class="btn primary" id="calcBtn" type="button">Calculate</button>
         <button class="btn" id="resetBtn" type="button">Reset</button>
+        <button class="btn" id="copyBtn" type="button" title="Copy results">Copy</button>
       </div>
 
       <div class="result" id="result" style="display:none;margin-top:14px"></div>
@@ -97,23 +105,41 @@
 
   <section>
     <h3 class="section-title">What next?</h3>
-    <p class="small">Use your target calories to portion meals from <a href="diet.html">Diet Plans</a>. Pair with a program from <a href="workout.html">Workout Plans</a> for best results.</p>
+    <p class="small">
+      Use your target calories to portion meals from <a href="diet.html">Diet Plans</a>.
+      Pair with a program from <a href="workout.html">Workout Plans</a> for best results.
+    </p>
   </section>
 
   <footer>
     <div class="footer-inner">
-      <div><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="logo" aria-hidden="true"></span><strong style="color:#fff">PeakFuel</strong></div>
-        <p>Tools to fuel your goals. © <span id="year"></span></p></div>
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <span class="logo" aria-hidden="true"></span><strong style="color:#fff">PeakFuel</strong>
+        </div>
+        <p>Tools to fuel your goals. © <span id="year"></span></p>
+      </div>
       <div>
         <h4 style="margin:0 0 8px;color:#fff">Quick Links</h4>
         <a href="diet.html">Diet Plans</a><br/>
         <a href="workout.html">Workout Plans</a>
       </div>
-      <div><h4 style="margin:0 0 8px;color:#fff">Disclaimer</h4><p class="small">Estimates only. Consult a professional for medical needs.</p></div>
+      <div>
+        <h4 style="margin:0 0 8px;color:#fff">Disclaimer</h4>
+        <p class="small">Estimates only. Consult a professional for medical needs.</p>
+      </div>
     </div>
   </footer>
 
   <script>
+    function goBack(){
+      if (window.history && window.history.length > 1 && document.referrer) {
+        history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    }
+
     function calc(){
       const sex = document.getElementById('sex').value;
       const age = +document.getElementById('age').value;
@@ -152,14 +178,54 @@
           <span><strong>Fat:</strong> ${fat_g} g</span>
         </div>
       `;
+
+      // Save to localStorage so results persist
+      const payload = { bmr: Math.round(bmr), tdee: Math.round(bmr*activity), target: Math.round(tdee), goal, protein_g, carbs_g, fat_g };
+      localStorage.setItem('peakfuel_macros', JSON.stringify(payload));
     }
+
+    function restore(){
+      const s = localStorage.getItem('peakfuel_macros');
+      if (!s) return;
+      try{
+        const p = JSON.parse(s);
+        const res = document.getElementById('result');
+        res.style.display='block';
+        res.innerHTML = `
+          <div class="inline" style="margin-bottom:8px">
+            <span><strong>BMR:</strong> ${p.bmr} kcal</span>
+            <span><strong>TDEE:</strong> ${p.tdee} kcal</span>
+            <span><strong>Target:</strong> ${p.target} kcal (${p.goal})</span>
+          </div>
+          <div class="inline">
+            <span><strong>Protein:</strong> ${p.protein_g} g</span>
+            <span><strong>Carbs:</strong> ${p.carbs_g} g</span>
+            <span><strong>Fat:</strong> ${p.fat_g} g</span>
+          </div>
+        `;
+      }catch(e){}
+    }
+
+    function copyResults(){
+      const res = document.getElementById('result');
+      if (res.style.display === 'none') return;
+      const text = res.innerText.replace(/\s+\n/g, '\n').trim();
+      navigator.clipboard?.writeText(text).then(()=> {
+        alert('Copied results to clipboard!');
+      }).catch(()=>{});
+    }
+
     document.getElementById('calcBtn').addEventListener('click', calc);
     document.getElementById('resetBtn').addEventListener('click', () => {
       document.querySelectorAll('input').forEach(i=>i.value=i.defaultValue);
       document.querySelectorAll('select').forEach(s=>s.value=s.querySelector('option[selected]')?.value || s.options[0].value);
       document.getElementById('result').style.display='none';
+      localStorage.removeItem('peakfuel_macros');
     });
+    document.getElementById('copyBtn').addEventListener('click', copyResults);
+
     document.getElementById('year').textContent=new Date().getFullYear();
+    restore();
   </script>
 </body>
 </html>
