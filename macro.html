@@ -25,7 +25,7 @@
   <header>
     <div class="nav">
       <a class="brand" href="index.html">
-        <span class="logo" aria-hidden="true"></span><strong>PeakFuel</strong>
+        <span class="logo" aria-hidden="true"></span><strong>IAMCREATINE</strong>
       </a>
       <nav>
         <a href="workout.html">Workout Plans</a>
@@ -181,11 +181,11 @@
 
       // Save to localStorage so results persist
       const payload = { bmr: Math.round(bmr), tdee: Math.round(bmr*activity), target: Math.round(tdee), goal, protein_g, carbs_g, fat_g };
-      localStorage.setItem('peakfuel_macros', JSON.stringify(payload));
+      localStorage.setItem('IAMCREATINE_MACROS', JSON.stringify(payload));
     }
 
     function restore(){
-      const s = localStorage.getItem('peakfuel_macros');
+      const s = localStorage.getItem('IAMCREATINE_MACROS');
       if (!s) return;
       try{
         const p = JSON.parse(s);
@@ -220,7 +220,7 @@
       document.querySelectorAll('input').forEach(i=>i.value=i.defaultValue);
       document.querySelectorAll('select').forEach(s=>s.value=s.querySelector('option[selected]')?.value || s.options[0].value);
       document.getElementById('result').style.display='none';
-      localStorage.removeItem('peakfuel_macros');
+      localStorage.removeItem('IAMCREATINE_MACROS');
     });
     document.getElementById('copyBtn').addEventListener('click', copyResults);
 
