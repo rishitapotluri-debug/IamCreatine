@@ -3,247 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PeakFuel — Supplements, Workout & Diet Plans</title>
-  <meta name="description" content="Premium creatine, pre-workout & apparel. Plus free workout programs, diet plans, and a macro calculator." />
-  <!-- Fonts & CSS -->
+  <title>IAMCREATINE — Supplements, Workout & Diet Plans</title>
+  <meta name="description" content="Premium creatine, workout plans, diet plans, and a macro calculator." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/base.css">
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <span class="logo" aria-hidden="true"></span>
-        <strong>PeakFuel</strong>
-      </a>
-      <nav>
-        <a href="workout.html">Workout Plans</a>
-        <a href="diet.html">Diet Plans</a>
-        <a href="macro.html">Macro Calculator</a>
-        <a class="cta" href="index.html#shop">Shop</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="IAMCREATINE Logo" style="height:40px;width:auto;">
+      <strong>IAMCREATINE</strong>
+    </a>
+    <nav>
+      <a href="workout.html">Workout Plans</a>
+      <a href="diet.html">Diet Plans</a>
+      <a href="macro.html">Macro Calculator</a>
+      <a class="cta" href="#shop">Shop</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero -->
-  <section class="hero" id="top">
+<section class="hero">
+  <div>
+    <h1>Fuel Your Strength.</h1>
+    <p>Pure creatine, smart nutrition tools, and proven training plans.</p>
+    <div class="actions">
+      <a class="btn primary" href="workout.html">Workout Plans</a>
+      <a class="btn" href="diet.html">Diet Plans</a>
+      <a class="btn" href="macro.html">Macro Calculator</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
     <div>
-      <h1>Fuel Your Edge.</h1>
-      <p>Clinically-dosed formulas, clean flavors, and performance-ready apparel. Free shipping on orders over $50.</p>
-      <div class="actions">
-        <a class="btn primary" href="workout.html">Get a Workout Plan</a>
-        <a class="btn" href="diet.html">Find a Diet Plan</a>
-        <a class="btn" href="macro.html">Macro Calculator</a>
-      </div>
+      <img src="assets/logo.png" alt="IAMCREATINE Logo" style="height:32px">
+      <p>© <span id="year"></span> IAMCREATINE</p>
     </div>
-    <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1554344728-77cf90d9ed26?q=80&w=1600&auto=format&fit=crop" alt="Athlete training in gym environment">
-      <span class="badge">Trusted by 50,000+ athletes</span>
-    </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- USPs -->
-  <section>
-    <div class="usp">
-      <div>✅ Third‑party tested</div>
-      <div>🚚 Free shipping $50+</div>
-      <div>💬 24/7 support</div>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section id="shop">
-    <div class="section-head">
-      <h2>Creatine</h2>
-      <p>Pure, micronized monohydrate for strength & recovery.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1596568353524-4b1e07b3ebfe?q=80&w=1600&auto=format&fit=crop" alt="Creatine powder tub on a dark background">
-          <span class="flag">Best Seller</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Creatine Monohydrate • 300g</h3>
-          <p class="desc">Micronized for rapid mixability. Unflavored — add to anything.</p>
-          <div class="price"><span class="now">$24.99</span><span class="old">$29.99</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989a?q=80&w=1600&auto=format&fit=crop" alt="Creatine capsules near a bottle">
-          <span class="flag">Vegan</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Creatine Capsules • 180 caps</h3>
-          <p class="desc">Convenient 3g per serving. Zero flavor, zero fuss.</p>
-          <div class="price"><span class="now">$27.99</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1579722825300-c7c2f9a8fc52?q=80&w=1600&auto=format&fit=crop" alt="Bulk creatine bag">
-          <span class="flag">Micronized</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Creatine Monohydrate • 1kg</h3>
-          <p class="desc">Bulk value bag for dedicated lifters. ~200 servings.</p>
-          <div class="price"><span class="now">$59.99</span><span class="old">$69.99</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <div class="section-head" style="margin-top:24px">
-      <h2>Pre‑Workout</h2>
-      <p>Energy, focus, and pump — without the crash.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1579126038374-6064e9370fbe?q=80&w=1600&auto=format&fit=crop" alt="Pre-workout tub on table">
-          <span class="flag">200mg Caffeine</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Ignite • Tropical Surge (30 servings)</h3>
-          <p class="desc">Clinically‑dosed beta‑alanine, citrulline, and L‑tyrosine.</p>
-          <div class="price"><span class="now">$34.99</span><span class="old">$39.99</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1600&auto=format&fit=crop" alt="Stim-free pre-workout bottle">
-          <span class="flag">Stim‑Free</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Pump+ • Blue Razz (30 servings)</h3>
-          <p class="desc">Caffeine‑free pump & focus stack for late sessions.</p>
-          <div class="price"><span class="now">$32.99</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Focus supplement with citrus">
-          <span class="flag">Sugar‑Free</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">FocusX • Citrus Burst (30 servings)</h3>
-          <p class="desc">Clean energy + nootropics for locked‑in training.</p>
-          <div class="price"><span class="now">$36.99</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <div class="section-head" style="margin-top:24px">
-      <h2>Apparel</h2>
-      <p>Performance fits designed for the grind.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1520975922284-5f61f1b6f82e?q=80&w=1600&auto=format&fit=crop" alt="Performance tee black">
-          <span class="flag">New</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Performance Tee • Black</h3>
-          <p class="desc">Moisture‑wicking, 4‑way stretch. S–XXL.</p>
-          <div class="price"><span class="now">$24.00</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1549570652-97324981a6fd?q=80&w=1600&auto=format&fit=crop" alt="Charcoal hoodie">
-          <span class="flag">Limited</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Heavyweight Hoodie • Charcoal</h3>
-          <p class="desc">Soft fleece interior, drop‑shoulder fit.</p>
-          <div class="price"><span class="now">$49.00</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-media">
-          <img src="https://images.unsplash.com/photo-1520975960059-4f0c88f954a7?q=80&w=1600&auto=format&fit=crop" alt="Graphite training shorts">
-          <span class="flag">Bestseller</span>
-        </div>
-        <div class="card-body">
-          <h3 class="title">Train Shorts • Graphite</h3>
-          <p class="desc">Breathable mesh with zip pockets. 5&quot; inseam.</p>
-          <div class="price"><span class="now">$32.00</span></div>
-          <div class="actions-row">
-            <a class="pill buy" href="#">Buy Now</a>
-            <a class="pill cart" href="#">Add to Cart</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-          <span class="logo" aria-hidden="true"></span>
-          <strong style="color:#fff">PeakFuel</strong>
-        </div>
-        <p>Premium supplements and training resources. © <span id="year"></span> PeakFuel.</p>
-      </div>
-      <div>
-        <h4 style="margin:0 0 8px;color:#fff">Resources</h4>
-        <a href="workout.html">Workout Plans</a><br/>
-        <a href="diet.html">Diet Plans</a><br/>
-        <a href="macro.html">Macro Calculator</a>
-      </div>
-      <div>
-        <h4 style="margin:0 0 8px;color:#fff">Legal</h4>
-        <a href="#">Terms</a><br/>
-        <a href="#">Privacy</a><br/>
-        <a href="#">Disclaimer</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
