@@ -2,90 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IAMCREATINE Macro & Calorie Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>IAMCREATINE – Macro & Calorie Calculator</title>
   <meta name="description"
-        content="Advanced macro calculator using body-fat %, lean muscle mass, or standard formulas. Built for athletes and everyday lifters.">
+        content="Accurate macro calculator using Mifflin–St Jeor and Katch–McArdle formulas, aligned with Calculator.net methodology.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/base.css" />
+  <!-- Base Styles -->
+  <link rel="stylesheet" href="assets/base.css">
 
   <style>
     .tool {
-      background:#11151c;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:16px;
-      padding:20px;
-      max-width:900px;
-      margin:0 auto;
+      background: #11151c;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
     }
     .row {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
-    @media (max-width:900px) {
-      .row { grid-template-columns:1fr }
+    @media (max-width: 900px) {
+      .row { grid-template-columns: 1fr }
     }
     label {
-      display:block;
-      font-weight:600;
-      margin-bottom:6px;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
     }
     input, select {
-      width:100%;
-      padding:10px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.12);
-      background:#0f131a;
-      color:#fff;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: #0f131a;
+      color: #fff;
     }
     .inline {
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .inline span {
-      background:#0f131a;
-      border:1px solid rgba(255,255,255,.1);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:14px;
+      background: #0f131a;
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
     }
     .note {
-      font-size:13px;
-      color:#9ba3b4;
-      margin-top:8px;
+      font-size: 13px;
+      color: #9aa4b2;
+      margin-top: 10px;
     }
   </style>
 </head>
 
 <body>
 
+<!-- ✅ HEADER -->
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="IAMCREATINE Logo" style="height:40px;width:auto;">
+      <img src="assets/logo.png" alt="IAMCREATINE Logo" style="height:38px;width:auto;">
       <strong>IAMCREATINE</strong>
     </a>
-
     <nav>
       <a href="workout.html">Workout Plans</a>
       <a href="diet.html">Diet Plans</a>
       <a href="macro.html" aria-current="page">Macro Calculator</a>
-      <a class="cta" href="index.html#shop">Shop</a>
+      <a href="index.html#shop">Shop</a>
     </nav>
   </div>
 </header>
 
+<!-- ✅ BACK BUTTON -->
 <div class="backwrap">
-  <button class="btn backbtn" type="button" onclick="goBack()">← Back</button>
+  <button class="btn backbtn" onclick="goBack()">← Back</button>
 </div>
 
+<!-- ✅ HERO -->
 <section class="hero">
   <div>
     <p class="small breadcrumb">
@@ -93,12 +97,13 @@
     </p>
     <h1>Macro & Calorie Calculator</h1>
     <p>
-      Calculates calories using body-fat %, lean muscle mass, or standard formulas.
-      Automatically chooses the most accurate method available.
+      Uses the same calorie and macro formulas as Calculator.net.
+      Automatically selects the most accurate method based on your inputs.
     </p>
   </div>
 </section>
 
+<!-- ✅ CALCULATOR -->
 <section>
   <div class="tool">
 
@@ -122,7 +127,7 @@
       </div>
 
       <div>
-        <label for="weight">Body Weight (kg)</label>
+        <label for="weight">Weight (kg)</label>
         <input id="weight" type="number" value="70">
       </div>
 
@@ -134,107 +139,107 @@
       </div>
 
       <div>
-        <label for="leanmass">
-          Lean Muscle Mass (kg) <span style="opacity:.6">(optional)</span>
-        </label>
-        <input id="leanmass" type="number" placeholder="e.g. 62">
-      </div>
-
-      <div>
         <label for="activity">Activity Level</label>
         <select id="activity">
           <option value="1.2">Sedentary</option>
           <option value="1.375">Light</option>
           <option value="1.55" selected>Moderate</option>
-          <option value="1.725">Very Active</option>
-          <option value="1.9">Athlete</option>
+          <option value="1.725">Active</option>
+          <option value="1.9">Very Active</option>
         </select>
       </div>
 
       <div>
         <label for="goal">Goal</label>
         <select id="goal">
-          <option value="cut">Cut (‑15%)</option>
-          <option value="maintain" selected>Maintain</option>
-          <option value="bulk">Bulk (+10%)</option>
+          <option value="cut">Weight Loss</option>
+          <option value="maintain" selected>Maintenance</option>
+          <option value="bulk">Muscle Gain</option>
         </select>
       </div>
     </div>
 
-    <div class="inline" style="margin-top:14px">
+    <div class="inline" style="margin-top:16px">
       <button class="btn primary" onclick="calculate()">Calculate</button>
       <button class="btn" onclick="resetForm()">Reset</button>
     </div>
 
-    <div id="result" class="result" style="display:none;margin-top:16px"></div>
+    <div id="result" class="result" style="display:none;margin-top:18px"></div>
 
     <p class="note">
-      Protein defaults to 2.2 g/kg of lean mass when available, otherwise 1.8 g/kg bodyweight.
-      Fat set at 0.8 g/kg. Carbs fill remaining calories.
+      Matches Calculator.net: Mifflin–St Jeor by default, Katch–McArdle when body fat is provided.
+      Uses ±500 kcal goal adjustment and percentage‑based macros.
     </p>
 
   </div>
 </section>
 
+<!-- ✅ FOOTER -->
 <footer>
   <div class="footer-inner">
     <div style="display:flex;align-items:center;gap:10px">
-      <img src="assets/logo.png" alt="IAMCREATINE Logo" style="height:32px">
+      <img src="assets/logo.png" alt="IAMCREATINE Logo" style="height:28px">
       <strong style="color:#fff">IAMCREATINE</strong>
     </div>
-    <p>Science‑backed performance tools. © <span id="year"></span></p>
+    <p>Science‑driven nutrition tools. © <span id="year"></span></p>
   </div>
 </footer>
 
+<!-- ✅ SCRIPT (Calculator.net‑aligned logic) -->
 <script>
 function goBack() {
   if (window.history.length > 1) history.back();
-  else window.location.href = 'index.html';
+  else window.location.href = "index.html";
 }
 
 function calculate() {
-  const sex = document.getElementById('sex').value;
-  const age = +document.getElementById('age').value;
-  const height = +document.getElementById('height').value;
-  const weight = +document.getElementById('weight').value;
-  const bodyfat = +document.getElementById('bodyfat').value;
-  const leanMassInput = +document.getElementById('leanmass').value;
-  const activity = +document.getElementById('activity').value;
-  const goal = document.getElementById('goal').value;
+  const sex = document.getElementById("sex").value;
+  const age = +document.getElementById("age").value;
+  const height = +document.getElementById("height").value;
+  const weight = +document.getElementById("weight").value;
+  const bodyfat = +document.getElementById("bodyfat").value;
+  const activity = +document.getElementById("activity").value;
+  const goal = document.getElementById("goal").value;
 
-  let bmr, lbm, method;
+  let bmr, method;
 
+  // ✅ Calculator.net BMR logic
   if (bodyfat > 0 && bodyfat < 60) {
-    lbm = weight * (1 - bodyfat / 100);
+    const lbm = weight * (1 - bodyfat / 100);
     bmr = 370 + (21.6 * lbm);
     method = "Katch–McArdle (Body Fat %)";
-  } else if (leanMassInput > 0 && leanMassInput < weight) {
-    lbm = leanMassInput;
-    bmr = 370 + (21.6 * lbm);
-    method = "Katch–McArdle (Lean Mass)";
   } else {
     if (sex === "male") {
       bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
     } else {
       bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
     }
-    lbm = null;
     method = "Mifflin–St Jeor";
   }
 
   let calories = bmr * activity;
-  if (goal === "cut") calories *= 0.85;
-  if (goal === "bulk") calories *= 1.10;
 
-  const protein = lbm ? Math.round(2.2 * lbm) : Math.round(1.8 * weight);
-  const fat = Math.round(0.8 * weight);
-  const carbs = Math.max(
-    0,
-    Math.round((calories - (protein * 4 + fat * 9)) / 4)
-  );
+  // ✅ Fixed calorie adjustment (Calculator.net)
+  if (goal === "cut") calories -= 500;
+  if (goal === "bulk") calories += 500;
 
-  document.getElementById("result").style.display = "block";
-  document.getElementById("result").innerHTML = `
+  // ✅ Macro percentages (Calculator.net)
+  let pPct, cPct, fPct;
+  if (goal === "cut") {
+    pPct = 0.40; cPct = 0.30; fPct = 0.30;
+  } else if (goal === "bulk") {
+    pPct = 0.30; cPct = 0.45; fPct = 0.25;
+  } else {
+    pPct = 0.30; cPct = 0.40; fPct = 0.30;
+  }
+
+  const protein = Math.round((calories * pPct) / 4);
+  const carbs = Math.round((calories * cPct) / 4);
+  const fat = Math.round((calories * fPct) / 9);
+
+  const result = document.getElementById("result");
+  result.style.display = "block";
+  result.innerHTML = `
     <div class="inline">
       <span><strong>Method:</strong> ${method}</span>
       <span><strong>BMR:</strong> ${Math.round(bmr)} kcal</span>
