@@ -1,115 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>IAMCREATINE – Macro & Calorie Calculator</title>
   <meta name="description"
-        content="Accurate macro calculator using Mifflin–St Jeor and Katch–McArdle formulas, aligned with Calculator.net methodology.">
+        content="Macro calculator using Calculator.net formulas: Mifflin–St Jeor, Katch–McArdle, percentage‑based macros.">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  https://fonts.googleapis.com
+  https://fonts.gstatic.com
+  https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap
 
-  <!-- Base Styles -->
-  <link rel="stylesheet" href="assets/base.css">
-
-  <style>
-    .tool {
-      background: #11151c;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 16px;
-      padding: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 900px) {
-      .row { grid-template-columns: 1fr }
-    }
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,.15);
-      background: #0f131a;
-      color: #fff;
-    }
-    .inline {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .inline span {
-      background: #0f131a;
-      border: 1px solid rgba(255,255,255,.1);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 14px;
-    }
-    .note {
-      font-size: 13px;
-      color: #9aa4b2;
-      margin-top: 10px;
-    }
-  </style>
+  assets/base.css
 </head>
 
 <body>
 
-<!-- ✅ HEADER -->
 <header>
   <div class="nav">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="IAMCREATINE Logo" style="height:38px;width:auto;">
+    index.html>
+      assets/logo.png alt="IAMCREATINE logo" style="height:40px">
       <strong>IAMCREATINE</strong>
     </a>
+
     <nav>
-      <a href="workout.html">Workout Plans</a>
-      <a href="diet.html">Diet Plans</a>
-      <a href="macro.html" aria-current="page">Macro Calculator</a>
-      <a href="index.html#shop">Shop</a>
+      macro.html>Macro Calculator</a>
+      diet.html>Diet Plans</a>
+      workout.html>Workout Plans</a>
     </nav>
   </div>
 </header>
 
-<!-- ✅ BACK BUTTON -->
 <div class="backwrap">
-  <button class="btn backbtn" onclick="goBack()">← Back</button>
+  <button class="btn backbtn" onclick="history.back()">← Back</button>
 </div>
 
-<!-- ✅ HERO -->
 <section class="hero">
   <div>
-    <p class="small breadcrumb">
-      <a href="index.html">Home</a> ▸ <strong>Macro Calculator</strong>
-    </p>
     <h1>Macro & Calorie Calculator</h1>
     <p>
-      Uses the same calorie and macro formulas as Calculator.net.
-      Automatically selects the most accurate method based on your inputs.
+      Uses the same formulas and macro logic as Calculator.net.
+      Automatically adapts based on the data you provide.
     </p>
   </div>
 </section>
 
-<!-- ✅ CALCULATOR -->
 <section>
   <div class="tool">
 
     <div class="row">
       <div>
-        <label for="sex">Sex</label>
+        <label>Sex</label>
         <select id="sex">
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -117,43 +59,41 @@
       </div>
 
       <div>
-        <label for="age">Age (years)</label>
-        <input id="age" type="number" value="28">
+        <label>Age</label>
+        <input id="age" type="number">
       </div>
 
       <div>
-        <label for="height">Height (cm)</label>
-        <input id="height" type="number" value="170">
+        <label>Height (cm)</label>
+        <input id="height" type="number">
       </div>
 
       <div>
-        <label for="weight">Weight (kg)</label>
-        <input id="weight" type="number" value="70">
+        <label>Weight (kg)</label>
+        <input id="weight" type="number">
       </div>
 
       <div>
-        <label for="bodyfat">
-          Body Fat % <span style="opacity:.6">(optional)</span>
-        </label>
-        <input id="bodyfat" type="number" placeholder="e.g. 18">
+        <label>Body Fat % (optional)</label>
+        <input id="bodyfat" type="number">
       </div>
 
       <div>
-        <label for="activity">Activity Level</label>
+        <label>Activity</label>
         <select id="activity">
           <option value="1.2">Sedentary</option>
           <option value="1.375">Light</option>
-          <option value="1.55" selected>Moderate</option>
+          <option value="1.55">Moderate</option>
           <option value="1.725">Active</option>
           <option value="1.9">Very Active</option>
         </select>
       </div>
 
       <div>
-        <label for="goal">Goal</label>
+        <label>Goal</label>
         <select id="goal">
           <option value="cut">Weight Loss</option>
-          <option value="maintain" selected>Maintenance</option>
+          <option value="maintain">Maintenance</option>
           <option value="bulk">Muscle Gain</option>
         </select>
       </div>
@@ -161,105 +101,94 @@
 
     <div class="inline" style="margin-top:16px">
       <button class="btn primary" onclick="calculate()">Calculate</button>
-      <button class="btn" onclick="resetForm()">Reset</button>
     </div>
 
-    <div id="result" class="result" style="display:none;margin-top:18px"></div>
-
-    <p class="note">
-      Matches Calculator.net: Mifflin–St Jeor by default, Katch–McArdle when body fat is provided.
-      Uses ±500 kcal goal adjustment and percentage‑based macros.
-    </p>
+    <div id="result" style="display:none;margin-top:16px"></div>
 
   </div>
 </section>
 
-<!-- ✅ FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div style="display:flex;align-items:center;gap:10px">
-      <img src="assets/logo.png" alt="IAMCREATINE Logo" style="height:28px">
+    <div style="display:flex;gap:10px;align-items:center">
+      assets/logo.png style="height:32px">
       <strong style="color:#fff">IAMCREATINE</strong>
     </div>
-    <p>Science‑driven nutrition tools. © <span id="year"></span></p>
+    <p>© <span id="year"></span></p>
   </div>
 </footer>
 
-<!-- ✅ SCRIPT (Calculator.net‑aligned logic) -->
 <script>
-function goBack() {
-  if (window.history.length > 1) history.back();
-  else window.location.href = "index.html";
-}
+document.getElementById("year").textContent = new Date().getFullYear();
 
+/* ✅ Calculator.net‑aligned calculation */
 function calculate() {
-  const sex = document.getElementById("sex").value;
-  const age = +document.getElementById("age").value;
-  const height = +document.getElementById("height").value;
-  const weight = +document.getElementById("weight").value;
-  const bodyfat = +document.getElementById("bodyfat").value;
-  const activity = +document.getElementById("activity").value;
-  const goal = document.getElementById("goal").value;
+  const sex = sexEl.value;
+  const age = +ageEl.value;
+  const height = +heightEl.value;
+  const weight = +weightEl.value;
+  const bodyfat = +bodyfatEl.value;
+  const activity = +activityEl.value;
+  const goal = goalEl.value;
 
   let bmr, method;
 
-  // ✅ Calculator.net BMR logic
   if (bodyfat > 0 && bodyfat < 60) {
     const lbm = weight * (1 - bodyfat / 100);
     bmr = 370 + (21.6 * lbm);
-    method = "Katch–McArdle (Body Fat %)";
+    method = "Katch–McArdle";
   } else {
-    if (sex === "male") {
-      bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-    } else {
-      bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
-    }
+    bmr = sex === "male"
+      ? (10 * weight) + (6.25 * height) - (5 * age) + 5
+      : (10 * weight) + (6.25 * height) - (5 * age) - 161;
     method = "Mifflin–St Jeor";
   }
 
   let calories = bmr * activity;
-
-  // ✅ Fixed calorie adjustment (Calculator.net)
   if (goal === "cut") calories -= 500;
   if (goal === "bulk") calories += 500;
 
-  // ✅ Macro percentages (Calculator.net)
-  let pPct, cPct, fPct;
-  if (goal === "cut") {
-    pPct = 0.40; cPct = 0.30; fPct = 0.30;
-  } else if (goal === "bulk") {
-    pPct = 0.30; cPct = 0.45; fPct = 0.25;
-  } else {
-    pPct = 0.30; cPct = 0.40; fPct = 0.30;
-  }
+  let p = goal === "cut" ? 0.40 : 0.30;
+  let c = goal === "bulk" ? 0.45 : goal === "cut" ? 0.30 : 0.40;
+  let f = goal === "bulk" ? 0.25 : 0.30;
 
-  const protein = Math.round((calories * pPct) / 4);
-  const carbs = Math.round((calories * cPct) / 4);
-  const fat = Math.round((calories * fPct) / 9);
-
-  const result = document.getElementById("result");
   result.style.display = "block";
   result.innerHTML = `
-    <div class="inline">
-      <span><strong>Method:</strong> ${method}</span>
-      <span><strong>BMR:</strong> ${Math.round(bmr)} kcal</span>
-      <span><strong>Calories:</strong> ${Math.round(calories)} kcal</span>
-    </div>
-    <div class="inline" style="margin-top:10px">
-      <span><strong>Protein:</strong> ${protein} g</span>
-      <span><strong>Carbs:</strong> ${carbs} g</span>
-      <span><strong>Fat:</strong> ${fat} g</span>
-    </div>
+    <p><strong>Method:</strong> ${method}</p>
+    <p><strong>Calories:</strong> ${Math.round(calories)} kcal</p>
+    <p><strong>Protein:</strong> ${Math.round(calories*p/4)} g</p>
+    <p><strong>Carbs:</strong> ${Math.round(calories*c/4)} g</p>
+    <p><strong>Fat:</strong> ${Math.round(calories*f/9)} g</p>
   `;
 }
 
-function resetForm() {
-  document.querySelectorAll("input").forEach(i => i.value = "");
-  document.getElementById("result").style.display = "none";
+/* ✅ URL PARAM SUPPORT (Calculator.net style) */
+const params = new URLSearchParams(location.search);
+
+const sexEl = document.getElementById("sex");
+const ageEl = document.getElementById("age");
+const heightEl = document.getElementById("height");
+const weightEl = document.getElementById("weight");
+const bodyfatEl = document.getElementById("bodyfat");
+const activityEl = document.getElementById("activity");
+const goalEl = document.getElementById("goal");
+const result = document.getElementById("result");
+
+if (params.has("cage")) ageEl.value = params.get("cage");
+if (params.has("csex")) sexEl.value = params.get("csex") === "m" ? "male" : "female";
+if (params.has("cheightmeter")) heightEl.value = params.get("cheightmeter");
+if (params.has("ckg")) weightEl.value = params.get("ckg");
+if (params.has("cfatpct")) bodyfatEl.value = params.get("cfatpct");
+if (params.has("cactivity")) activityEl.value = params.get("cactivity");
+
+if (params.has("cgoal")) {
+  const map = { l:"cut", m:"maintain", g:"bulk" };
+  if (map[params.get("cgoal")]) goalEl.value = map[params.get("cgoal")];
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+if (params.size > 0) calculate();
 </script>
 
 </body>
 </html>
+``
